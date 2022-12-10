@@ -12,6 +12,8 @@ const AddUser = () => {
   const addUserHandler = (event) => {
     event.preventDefault();
     console.log(enteredUsername , enteredAge)
+    setEnteredUsername('');
+    setEnteredAge('');
   };
 
   const UsernameChangeHandler=(event)=>{
@@ -25,9 +27,9 @@ const AddUser = () => {
     <Card className={classes.input}>
     <form onSubmit={addUserHandler}>
       <label htmlFor="username">Username</label>
-      <input id="username" type="text" onChange={UsernameChangeHandler}></input>
+      <input id="username" type="text" value={enteredUsername} onChange={UsernameChangeHandler}></input>
       <label htmlFor="age">Age (Years)</label>
-      <input id="age" type="number" onChange={ageChangeHandler}></input>
+      <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler}></input>
       <Button type="Submit">Add User</Button>
     </form>
     </Card>
